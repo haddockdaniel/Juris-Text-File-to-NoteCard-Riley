@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
-    <PublishUrlHistory>C:\Juris\JPS - Law Base Conflict Data Extraction\|C:\Juris\Copy Practice Class Code to MBF07\|publish\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Juris\JPS - LawBase Conflict Data Extraction\|C:\Juris\JPS - Law Base Conflict Data Extraction\|C:\Juris\Copy Practice Class Code to MBF07\|publish\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
     <UpdateUrlHistory />

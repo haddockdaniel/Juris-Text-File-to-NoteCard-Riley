@@ -103,7 +103,7 @@ namespace JurisUtilityBase
             string[] allLines = file.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
             NoteCard nc = null;
             List<NoteCard> ncList = new List<NoteCard>();
-            //store client , matter numbers and party type/names read 41 lines
+            //store client , matter numbers and party type/names 
             for (int i = 0; i < allLines.Count(); i++)
             {
                 try
@@ -158,9 +158,9 @@ namespace JurisUtilityBase
                     SQL = "SELECT * FROM MatterNote where MNMatter = " + n.matterID + " and MNNoteIndex = '" + n.partyType + "'";
                     DataSet matSet = _jurisUtility.RecordsetFromSQL(SQL);
                     if (matSet.Tables[0].Rows.Count > 0) //if it already exists
-                        SQL = "update matternote set mnnotetext = cast(mnnotetext as nvarchar(max)) + cast( char(13) as nvarchar(max)) + cast(replace('" + n.partyName + "', '|', char(13))as nvarchar(max)) where mnmatter = " + n.matterID + " and mnnoteindex = '" + n.partyType + "'";
+                        SQL = "update matternote set mnnotetext = cast(mnnotetext as nvarchar(max)) + cast( char(13) + char(10) as nvarchar(max)) + cast(replace('" + n.partyName + "', '|', char(13) + char(10))as nvarchar(max)) where mnmatter = " + n.matterID + " and mnnoteindex = '" + n.partyType + "'";
                     else
-                        SQL = "insert into matternote (mnmatter, mnnoteindex, mnobject, mnnotetext, mnnoteobject) Values (" + n.matterID + ", '" + n.partyType + "', '', replace('" + n.partyName + "', '|', char(13)), null)";
+                        SQL = "insert into matternote (mnmatter, mnnoteindex, mnobject, mnnotetext, mnnoteobject) Values (" + n.matterID + ", '" + n.partyType + "', '', replace('" + n.partyName + "', '|', char(13) + char(10)), null)";
 
                     _jurisUtility.ExecuteNonQueryCommand(0, SQL);
 
